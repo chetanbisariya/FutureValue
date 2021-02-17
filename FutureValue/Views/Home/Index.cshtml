@@ -1,0 +1,38 @@
+﻿@model FutureValueModel
+@{
+    ViewBag.Title = "Future Value Calculator";
+}
+<h1>Future Value Calculator</h1>
+<form asp-action="Index" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Email">Enter Your Email:</label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Phone">Enter Your Phone:</label>
+        <input asp-for="Phone" />
+    </div>
+    <div>
+        <label asp-for="Name">Enter Your Name:</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="PeriodicPayment">Periodic Payment (Pmt):</label>
+        <input asp-for="PeriodicPayment" />
+    </div>
+    <div>
+        <label asp-for="DiscountRate">Yearly Interest Rate(i):</label>
+        <input asp-for="DiscountRate" />
+    </div>
+    <div>
+        <label asp-for="NumberOfPeriods">Number of Periods in Years(n):</label>
+        <input asp-for="NumberOfPeriods" />
+    </div>
+    <div>
+        <label>Future Value:</label>
+        <input value="@ViewBag.FV.ToString("C2")" readonly>
+    </div>
+    <button type="submit">Calculate</button>
+    <a asp-action="Index">Clear</a>
+</form>
